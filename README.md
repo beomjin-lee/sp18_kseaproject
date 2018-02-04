@@ -1,4 +1,4 @@
-# KSEA Project for Spring 2018. 
+# KSEA Project for Spring 2018
 
 **Contributors**: 
 
