@@ -12,6 +12,6 @@ This project will be based around using data science in Blockchain or Quantitati
 
 Please write all files in the following format to avoid any confusion: 
 ```
-<Name>_<File Name>
+<Contributor's Name>_<File Name>
 ```
 
