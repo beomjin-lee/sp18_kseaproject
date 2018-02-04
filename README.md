@@ -1,1 +1,1 @@
-# sp18_kseaproject
+KSEA Project for Spring 2018. 
