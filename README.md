@@ -4,6 +4,12 @@
 
 Beom Jin Lee
 
+Keun Woo Lim
+
+Su Yeon Kim 
+
+Hyeonjo Jeong
+
 **Project Description** 
 
 This project will be based around using data science in Blockchain or Quantitative Finance Applications.
