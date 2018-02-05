@@ -3,7 +3,12 @@
 **Contributors**: 
 
 Beom Jin Lee
+
 Keun Woo Lim
+
+Su Yeon Kim 
+
+Hyeonjo Jeong
 
 **Project Description** 
 
