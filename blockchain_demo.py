@@ -85,8 +85,8 @@ class Block:
 				)
 
 	def __repr__(self):
-		return 'Block<hash: {}, prev_hash: {}, messages: {}, time: {}>'.format(
-			self.hash, self.prev_hash, len(self.messages), self.timestamp
+		return 'Block<hash: {}, prev_hash: {}, num_messages: {}, last_message: {} time: {}>'.format(
+			self.hash, self.prev_hash, len(self.messages), self.messages[len(self.messages) - 1].data, self.timestamp
 		)
 
 class SimpleChain:
@@ -133,9 +133,9 @@ def manager():
 	chain = SimpleChain()
 	block = Block()
 	msg = """
-		Basic implementation of a Blockchain. Changes are inmutable. Be aware.
+		Basic implementation of a Blockchain.
 		Action set:
-			- add message to the existing block  (1)
+			- add message to the last block  (1)
 			- add existing block to the chain    (2)
 			- show a block (index will be asked) (3)
 			- show the whole chain               (4)
@@ -144,7 +144,6 @@ def manager():
 		The validate action will kill the program if the integrity if the chain
 		is compromised.
 		"""
-
 	print(msg)
 	while True:
 		print()
@@ -153,22 +152,30 @@ def manager():
 
 		if decide == "1":
 			block.add_message(Message(input("Enter your data:")))
+
 		elif decide == "2":
 			if len(block.messages) > 0:
 				chain.add_block(block)
 				block = Block()
 			else: print("Block is empty, try adding some messages")
+
 		elif decide == "3":
-			index = int(input("Provide the index: "))
-			if len(chain.chain)>0:
+			index = int(input("Index: "))
+			if len(chain.chain) > 0:
 				try: print(chain.chain[index])
-				except: print("An issue occurred")
+				except: print("Index out of range")
+
 		elif decide == "4":
 			for b in chain.chain:
 				print(b)
-				print("----------------")
+				print("----------------\n")
+
 		elif decide == "5":
 			if chain.validate(): print("Integrity validated.")
+
+		elif decide == "6":
+			break
+
 		else:
 			print("This is not a right command")
 
